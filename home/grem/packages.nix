@@ -11,5 +11,7 @@
     alsa-utils
     fzf
     luaPackages.lua
+    kitty
+    nil
   ];
 }

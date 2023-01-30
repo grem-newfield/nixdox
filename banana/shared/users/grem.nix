@@ -16,6 +16,7 @@ in {
     shell = pkgs.fish;
     initialPassword = "user";
     uid = 1000;
+    openssh.authorized.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwUJa91Ge1Yctw7ayNoKpu6JE3lEzpg74Xylp05z8B1 novoger123@gmail.com"];
     extraGroups = [
       "wheel"
       "networkmanager"
@@ -31,3 +32,4 @@ in {
     ];
   };
 }
+# ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwUJa91Ge1Yctw7ayNoKpu6JE3lEzpg74Xylp05z8B1 novoger123@gmail.com
