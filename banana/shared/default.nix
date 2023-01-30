@@ -1,4 +1,4 @@
-# shader setting between all users
+# shared setting between all users
 
 {
   lib,
@@ -35,6 +35,7 @@
       unzip
       neofetch
       brave
+      nil
     ];
 
     variables = {

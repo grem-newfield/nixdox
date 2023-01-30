@@ -12,6 +12,5 @@
     fzf
     luaPackages.lua
     kitty
-    nil
   ];
 }
