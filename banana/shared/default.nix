@@ -1,10 +1,12 @@
+# shader setting between all users
+
 {
   lib,
   pkgs,
   ...
 }: {
   imports = [
-    ./network.nix
+    # ./network.nix
     #TODO : add more imports for packasd
   ];
   console = {
@@ -12,8 +14,8 @@
   };
 
   i18n = {
-    defaultLocale = "en_UK.UTF-8";
-    supportedLocales = ["en_UK.UTF-8/UTF-8"];
+    defaultLocale = "en_GB.UTF-8";
+    supportedLocales = ["en_GB.UTF-8/UTF-8"];
   };
 
   environment = {
@@ -29,7 +31,7 @@
       zip
       wget
       unrar
-      7z
+      _7zz
       unzip
       neofetch
       brave
@@ -67,6 +69,6 @@
 
   security = {
     polkit.enable = true;
-  }
+  };
 
 }

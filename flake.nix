@@ -1,7 +1,10 @@
+# flake
+
 {
   description = "Banana flavoured NixOS";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     flake-utils.url = "github:numtide/flake-utils";
     devshell.url = "github:numtide/devshell";
     home-manager = {
@@ -16,6 +19,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    
     system = "x86_64-linux";
     lib = nixpkgs.lib;
 
@@ -24,7 +28,7 @@
       config = {
         allowBroken = true;
         allowUnfree = true;
-        # tarball-ttl = 0;
+        tarball-ttl = 0;
       };
       overlays = with inputs; [];
     };
@@ -53,15 +57,8 @@
     #       };
     #     };
     #   };
-    nixosConfigurations = import ./banana {inherit inputs outputs;};
-    # nixpkgs.lib.nixosSystem {
-    # inherit system;
-    # specialArgs = {inherit inputs;};
-    # modules = [
-    #   ./hardware-configuration.nix
-    #   ./configuration.nix
-    # ];
-    # };
+    nixosConfigurations = import ./banana {inherit pkgs inputs outputs;};
+
     devShell.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         alejandra

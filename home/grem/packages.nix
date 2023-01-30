@@ -8,7 +8,7 @@
     htop
     killall
     pipewire
-    alsa
+    alsa-utils
     fzf
     luaPackages.lua
   ];

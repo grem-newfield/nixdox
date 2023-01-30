@@ -1,3 +1,5 @@
+# config for specific machine
+
 {
   config,
   lib,
@@ -7,12 +9,16 @@
   imports = [
     ./hardware-configuration.nix
     # ./nvidia.nix
-    # ../shared
+    ../shared
+    ../shared/users/grem.nix
   ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd = {
-      systemd.enable = true;
+      systemd = {
+        enable = true;
+        services.NetworkManager-wait-online.enable = false;
+      };
       supportedFilesystems = ["ext4"];
     };
     # kernelParams = [];

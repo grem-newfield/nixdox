@@ -1,3 +1,5 @@
+# specific user config -> grem
+
 {
   pkgs,
   config,
@@ -5,7 +7,7 @@
   ...
 }:
 let
-  ifTheyExist = groups: buildins.filter (group: builtins.hasAttr group config.users.groups) groups;
+  ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
   users.mutableUsers = true;
   users.users.grem = {
@@ -13,6 +15,7 @@ in {
     isNormalUser = true;
     shell = pkgs.fish;
     initialPassword = "user";
+    uid = 1000;
     extraGroups = [
       "wheel"
       "networkmanager"
