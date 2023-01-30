@@ -38,7 +38,7 @@
     ];
 
     variables = {
-      EDITOR = "helix";
+      EDITOR = "hx";
       BROWSER = "brave";
       
     };

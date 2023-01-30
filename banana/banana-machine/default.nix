@@ -33,6 +33,10 @@
   };
 
   services = {
+    openssh = {
+      enable = true;
+      # passwordAuthentication = true;
+    };
     xserver = {
       enable = true;
       windowManager = {

@@ -11,12 +11,12 @@ let
 in {
   users.mutableUsers = true;
   users.users.grem = {
-    description = "Oh, veru cute! ;3";
+    description = "grem Oh, veru cute! ;3";
     isNormalUser = true;
     shell = pkgs.fish;
     initialPassword = "user";
     uid = 1000;
-    openssh.authorized.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwUJa91Ge1Yctw7ayNoKpu6JE3lEzpg74Xylp05z8B1 novoger123@gmail.com"];
+    openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwUJa91Ge1Yctw7ayNoKpu6JE3lEzpg74Xylp05z8B1 novoger123@gmail.com"];
     extraGroups = [
       "wheel"
       "networkmanager"
