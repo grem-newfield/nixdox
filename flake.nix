@@ -59,7 +59,7 @@
     #   };
     nixosConfigurations = import ./banana {inherit pkgs inputs outputs;};
 
-    devShell.${system}.default = pkgs.mkShell {
+    devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         alejandra
         git

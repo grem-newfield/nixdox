@@ -19,5 +19,30 @@
     manpages.enable = false;
   };
 
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      lfs.enable = true;
+      userName = "grem-newfield";
+      userEmail = "novoger123@gmail.com";
+    };
+
+fish = {
+    enable = true;
+    interactiveShellInit = ''
+      any-nix-shell fish --info-right | source
+    '';
+    shellInit = ''
+      # Disable fish greeting
+      set -g fish_greeting
+    '';
+    shellAliases = {
+      commit = "git add . && git commit -m";
+  };
+  };
+  
+
+
+};
 }

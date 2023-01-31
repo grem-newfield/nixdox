@@ -8,6 +8,7 @@
   imports = [
     # ./network.nix
     #TODO : add more imports for packasd
+    ./nix.nix
   ];
   console = {
     keyMap = "fi";
