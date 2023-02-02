@@ -1,5 +1,4 @@
 # shared setting between all users
-
 {
   lib,
   pkgs,
@@ -52,9 +51,8 @@
   # programs = [];
 
   services = {
-
     dbus.enable = true;
-  
+
     pipewire = {
       enable = true;
       alsa = {
@@ -75,5 +73,4 @@
   security = {
     polkit.enable = true;
   };
-
 }

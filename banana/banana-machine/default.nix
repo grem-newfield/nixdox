@@ -1,5 +1,4 @@
 # config for specific machine
-
 {
   config,
   lib,
@@ -52,22 +51,19 @@
         lightdm = {
           enable = true;
         };
-        autoLogin = { 
-          enable = true; 
+        autoLogin = {
+          enable = true;
           user = "grem";
         };
       };
     };
     # security.doas = {
-      # enable = true;
-      # extraConfig = ''
-        # permit nopass :wheel
-      # '';
+    # enable = true;
+    # extraConfig = ''
+    # permit nopass :wheel
+    # '';
     # };
   };
 
   # hardware = {}; TODO: actually wow
-  
-    
-
 }

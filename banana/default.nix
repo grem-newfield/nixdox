@@ -22,7 +22,6 @@ in {
       [
         ./banana-machine
         {networking.hostName = "banana-machine";}
-        
       ]
       ++ sharedModules;
     specialArgs = {inherit inputs;};

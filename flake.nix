@@ -1,5 +1,4 @@
 # flake
-
 {
   description = "Banana flavoured NixOS";
   inputs = {
@@ -19,7 +18,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    
+
     system = "x86_64-linux";
     lib = nixpkgs.lib;
 
