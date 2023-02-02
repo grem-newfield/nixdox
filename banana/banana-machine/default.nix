@@ -37,6 +37,7 @@
       # passwordAuthentication = true;
     };
     xserver = {
+      layout = "fi";
       enable = true;
       windowManager = {
         awesome = {
