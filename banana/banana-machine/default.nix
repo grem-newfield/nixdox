@@ -49,7 +49,13 @@
       };
       displayManager = {
         defaultSession = "none+awesome";
-        lightdm.enable = true;
+        lightdm = {
+          enable = true;
+        };
+        autoLogin = { 
+          enable = true; 
+          user = "grem";
+        };
       };
     };
     # security.doas = {

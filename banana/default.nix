@@ -20,7 +20,7 @@ in {
   banana-machine = outputs.lib.nixosSystem {
     modules =
       [
-        ./banana-machine # {inherit pkgs;}
+        ./banana-machine
         {networking.hostName = "banana-machine";}
         
       ]

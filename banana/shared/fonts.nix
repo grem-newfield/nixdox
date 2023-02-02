@@ -6,7 +6,7 @@
 {
   fonts = {
     fonts = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; }) ]
-    ++  lib.attrValues { inherit (pkgs) sarasa-gothic ipaexfont; };
+    ++  lib.attrValues { inherit (pkgs) ubuntu_font_family; };
   fontconfig.enable = true;
   };
 
