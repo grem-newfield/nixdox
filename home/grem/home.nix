@@ -65,7 +65,7 @@
           color-modes = true;
           shell = ["fish" "-c"];
           # rulers = [80]
-          bufferline = "multiple";
+          # bufferline = "multiple";
           # auto-pairs = false
           # scrolloff = 79
         };
