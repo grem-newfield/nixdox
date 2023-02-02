@@ -11,6 +11,13 @@
     homeDirectory = "/home/grem";
     stateVersion = "23.05";
     extraOutputsToInstall = [];
+
+    file = {
+      "awesome" = {
+        source = ./awesome;
+        target = "/home/grem/.config/awesome";
+      };
+    };
   };
 
   manual = {

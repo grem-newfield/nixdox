@@ -1,3 +1,7 @@
+check:
+	git add .
+	nix flake check --refresh
+
 push:
 	$(call spacer)
 	alejandra *
