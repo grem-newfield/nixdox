@@ -11,5 +11,5 @@ push:
 	git push
 
 define spacer
-	@echo -e "n\n\n\n"
+	@echo -e "\n\n # # # # # # # # # \n\n"
 endef
