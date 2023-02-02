@@ -4,13 +4,13 @@
   ...
 }: {
   home.packages = with pkgs; [
-    fish
-    htop
     killall
-    pipewire
-    alsa-utils
     fzf
     luaPackages.lua
     kitty
+
+    #nixy
+    any-nix-shell
+    nil
   ];
 }

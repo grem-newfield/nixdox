@@ -9,6 +9,7 @@
     # ./network.nix
     #TODO : add more imports for packasd
     ./nix.nix
+    ./fonts.nix
   ];
   console = {
     keyMap = "fi";
@@ -24,6 +25,9 @@
     shells = [pkgs.fish];
 
     systemPackages = with pkgs; [
+      htop
+      pipewire
+      alsa-utils
       fd
       ripgrep
       helix
@@ -42,7 +46,6 @@
     variables = {
       EDITOR = "hx";
       BROWSER = "brave";
-      
     };
   };
 
