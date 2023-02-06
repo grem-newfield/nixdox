@@ -30,7 +30,7 @@
     lf = {
       enable = true;
       extraConfig = ''
-        set previewer /usr/bin/env pistol
+        set previewer ${pkgs.pistol}/bin/pistol
       '';
       settings = {
         hidden = true;
