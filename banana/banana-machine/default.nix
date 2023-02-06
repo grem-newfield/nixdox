@@ -11,6 +11,7 @@
     ../shared
     ../shared/users/grem.nix
   ];
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd = {

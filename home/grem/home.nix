@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   outputs,
   pkgs,
@@ -11,13 +12,6 @@
     homeDirectory = "/home/grem";
     stateVersion = "23.05";
     extraOutputsToInstall = [];
-
-    # file = {
-    #   "awesome" = {
-    #     source = ./awesome;
-    #     target = "/home/grem/.config/awesome";
-    #   };
-    # };
     file."/home/grem/.config/awesome".source = ./awesome;
   };
 
@@ -29,6 +23,19 @@
 
   programs = {
     home-manager.enable = true;
+
+    lf = {
+      enable = true;
+      extraConfig = ''
+        set previewer ~/.go/bin/pistol
+      '';
+      settings = {
+        hidden = true;
+        icons = true;
+        preview = true;
+      };
+    };
+
     git = {
       enable = true;
       lfs.enable = true;
@@ -113,6 +120,14 @@
       };
       themes = {
       };
+      languages = with pkgs; [
+        {
+          name = "nix";
+          auto-format = true;
+          languaguge-server = {command = lib.getExe inputs.nil.packages.${pkgs.system}.default;};
+          config.nil.formatting.command = ["alejandra" "-q"];
+        }
+      ];
     };
   };
 }
