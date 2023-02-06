@@ -1,0 +1,20 @@
+[Default Applications]
+application/octet-stream=userapp-aseprite.exe-MCL7R1.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-shellscript=userapp-lvim-gui-XDXCM1.desktop;
+application/xhtml+xml=firefox.desktop;
+inode/directory=thunar.desktop;
+text/html=brave-browser-nightly.desktop;
+text/plain=micro.desktop;
+x-scheme-handler/about=brave-browser-nightly.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+x-scheme-handler/discord-580018394888273931=discord-580018394888273931.desktop;
+x-scheme-handler/http=brave-browser.desktop;
+x-scheme-handler/https=brave-browser.desktop;
+x-scheme-handler/terminal=cool-retro-term.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-YFX8V1.desktop;
+x-scheme-handler/unknown=brave-browser-nightly.desktop;

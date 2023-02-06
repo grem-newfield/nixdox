@@ -58,6 +58,10 @@
           user = "grem";
         };
       };
+      virtualScreen = {
+        x = 1280;
+        y = 1024;
+      };
     };
     # security.doas = {
     # enable = true;

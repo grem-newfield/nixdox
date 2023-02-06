@@ -25,6 +25,7 @@
 
     systemPackages = with pkgs; [
       handlr
+      file
       htop
       pipewire
       alsa-utils

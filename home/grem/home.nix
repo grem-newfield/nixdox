@@ -6,13 +6,16 @@
   lib,
   ...
 }: {
-  home = {
+  home = rec {
     username = "grem";
     # homeDirectory = pkgs.lib.mkForce "/home/grem";
-    homeDirectory = "/home/grem";
+    homeDirectory = "/home/${username}";
     stateVersion = "23.05";
     extraOutputsToInstall = [];
+
+    # copium copying
     file."/home/grem/.config/awesome".source = ./awesome;
+    file."/home/grem/.config/handlr/mimeapps.list".source = ./mimeapps.list;
   };
 
   manual = {
