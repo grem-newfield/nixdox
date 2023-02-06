@@ -24,6 +24,7 @@
     shells = [pkgs.fish];
 
     systemPackages = with pkgs; [
+      handlr
       htop
       pipewire
       alsa-utils
