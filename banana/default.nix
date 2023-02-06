@@ -33,8 +33,6 @@ in {
           ];
           environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
         })
-
-        nixpkgs-f2k.nixosModules.stevenblack
       ]
       ++ sharedModules;
     specialArgs = {inherit inputs;};
