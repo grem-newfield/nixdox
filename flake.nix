@@ -3,6 +3,7 @@
   description = "Banana flavoured NixOS";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     flake-utils.url = "github:numtide/flake-utils";
     devshell.url = "github:numtide/devshell";
@@ -25,6 +26,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-f2k,
     rust-overlay,
     ...
   } @ inputs: let
@@ -40,34 +42,14 @@
         allowUnfree = true;
         tarball-ttl = 0;
       };
-      overlays = with inputs; [];
+      #   overlays = with inputs; [
+
+      #  (builtins.getFlake "github:fortuneteller2k/nixpkgs-f2k").overlays.default
+      #   ];
     };
   in rec {
     inherit lib pkgs;
-    #   homeConfigurations = {
-    #     home-conf = { system, nixpkgs, home-manager, ... }:
-    #     let
-    #       username = "grem";
-    #       homeDirectory = "/home/${username}";
-    #       configHome = "${homeDirectory}/.config";
-    #       pkgs = import nixpkgs {
-    #         inherit system;
-    #         config.allowUnfree = true;
-    #         config.xdg.configHome = configHome;
-    #         overlays = [];
-    #       };
-    #     in {
-    #       main = home-manager.lib.homeMnagerConfiguration rec {
-    #         inherit pkgs system username homeDirectory;
-    #         stateVersion = "23.05";
-    #         configuration = import ./home.nix {
-    #           inherit pkgs;
-    #           inherit (pkgs) config lib stdenv;
-    #         };
-    #       };
-    #     };
-    #   };
-    nixosConfigurations = import ./banana {inherit pkgs inputs outputs;};
+    nixosConfigurations = import ./banana {inherit pkgs inputs outputs nixpkgs-f2k;};
 
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [

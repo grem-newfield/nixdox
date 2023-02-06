@@ -3,6 +3,7 @@
   inputs,
   outputs,
   pkgs,
+  nixpkgs-f2k,
   ...
 }: let
   sharedModules = [
@@ -24,9 +25,16 @@ in {
         {networking.hostName = "banana-machine";}
 
         ({pkgs, ...}: {
-          nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
+          nixpkgs.overlays = [
+            inputs.rust-overlay.overlays.default
+            nixpkgs-f2k.overlays.compositors
+            nixpkgs-f2k.overlays.window-managers
+            nixpkgs-f2k.overlays.stdenvs
+          ];
           environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
         })
+
+        nixpkgs-f2k.nixosModules.stevenblack
       ]
       ++ sharedModules;
     specialArgs = {inherit inputs;};
