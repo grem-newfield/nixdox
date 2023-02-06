@@ -2,8 +2,8 @@
 {
   description = "Banana flavoured NixOS";
   inputs = {
-    # nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     flake-utils.url = "github:numtide/flake-utils";
     devshell.url = "github:numtide/devshell";
     home-manager = {
@@ -11,21 +11,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # rust-overlay = {
-    #   url = "github:oxalica/rust-overlay";
-    # };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+    };
 
     nil = {
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.rust-overlay.follows = "rust-overlay";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
   };
 
   outputs = {
     self,
     nixpkgs,
-    # rust-overlay,
+    rust-overlay,
     ...
   } @ inputs: let
     inherit (self) outputs;

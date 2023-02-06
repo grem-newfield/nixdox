@@ -22,10 +22,11 @@ in {
       [
         ./banana-machine
         {networking.hostName = "banana-machine";}
-        # {
-        #   nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
-        #   environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
-        # }
+
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
+          environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
+        })
       ]
       ++ sharedModules;
     specialArgs = {inherit inputs;};
