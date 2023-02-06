@@ -51,15 +51,15 @@
     inherit lib pkgs;
     nixosConfigurations = import ./banana {inherit pkgs inputs outputs nixpkgs-f2k;};
 
-    devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        alejandra
-        git
-      ];
-      name = "dotfiles";
-    };
+    # devShells.${system}.default = pkgs.mkShell {
+    #   packages = with pkgs; [
+    #     alejandra
+    #     git
+    #   ];
+    #   name = "dotfiles";
+    # };
 
     # formatter
-    formatter.${system} = pkgs.${system}.alejandra;
+    # formatter.${system} = pkgs.${system}.alejandra;
   };
 }

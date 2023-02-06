@@ -30,7 +30,7 @@
     lf = {
       enable = true;
       extraConfig = ''
-        set previewer ~/.go/bin/pistol
+        set previewer "/usr/bin/env pistol"
       '';
       settings = {
         hidden = true;
