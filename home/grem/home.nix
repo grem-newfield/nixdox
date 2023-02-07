@@ -6,20 +6,19 @@
   lib,
   ...
 }: {
-  home = rec {
+  home = let
+    configDirectory = "/home/grem/.config";
+  in rec {
     username = "grem";
     # homeDirectory = pkgs.lib.mkForce "/home/grem";
     homeDirectory = "/home/${username}";
+
     stateVersion = "23.05";
     extraOutputsToInstall = [];
 
     # copium copying
-    file."/home/grem/.config/awesome".source = ./awesome;
-    file."/home/grem/.config/ames".source = fetchTarball {
-      url = "https://github.com/eshrh/ames/archive/refs/tags/v0.1.5.tar.gz";
-      sha256 = "0iyic1g9b6r2kp38ly1iy3qar660qg5k54zycr2g5d4aanac36yc";
-    };
-    file."/home/grem/.config/handlr/mimeapps.list".source = ./mimeapps.list;
+    file."${configDirectory}/awesome".source = ./awesome;
+    file."${configDirectory}/handlr/mimeapps.list".source = ./mimeapps.list;
   };
 
   manual = {
